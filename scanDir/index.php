@@ -6,4 +6,6 @@ use Flagoon\FolderCrawler;
 
 $folderCrawler = new FolderCrawler();
 
-$folderCrawler->countSizes(getcwd());
+$folderContents = $folderCrawler->countSizes(getcwd());
+
+$folderCrawler->printResults($folderContents);
