@@ -1,10 +1,21 @@
-import React from 'react';
-import './App.css';
-
 const makeDivs = () => {
+    clearBox();
     const input = document.querySelector('input');
     const count = Number(input.value);
-    createFibonacciBoxes(count);
+    if (checkInputRange(count)) {
+        createFibonacciBoxes(count);
+    } else {
+        alert('Number should be between 1 and 20');
+    }
+};
+
+const checkInputRange = number => {
+    return number > 0 && number < 21;
+};
+
+const clearBox = () => {
+    const screen = document.querySelector('#box');
+    screen.innerHTML = '';
 };
 
 const createFibonacciBoxes = count => {
@@ -31,16 +42,5 @@ const fibonacci = value => {
     }
 };
 
-const App = () => {
-    return (
-        <div>
-            <button type="button" onClick={makeDivs}>
-                click me
-            </button>
-            <input type="number" min="0" />
-            <div id="box" />
-        </div>
-    );
-};
-
-export default App;
+const button = document.querySelector('button');
+button.addEventListener('click', makeDivs);

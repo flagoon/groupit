@@ -1,0 +1,14 @@
+{
+    "name": "flagoon/geolocation",
+    "authors": [
+        {
+            "name": "Paweł Kochanek",
+            "email": "pawel.kochanek@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"Flagoon\\": "src"}
+    }
+
+}

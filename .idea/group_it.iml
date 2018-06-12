@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/scanDir/src" isTestSource="false" packagePrefix="Flagoon\" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/phpdocumentor/reflection-common" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/phpspec/prophecy" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/phpunit/php-token-stream" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/sebastian/code-unit-reverse-lookup" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/sebastian/environment" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/sebastian/object-reflector" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/sebastian/resource-operations" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/scanDir/vendor/webmozart/assert" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
