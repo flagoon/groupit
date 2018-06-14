@@ -8,12 +8,16 @@
 declare(strict_types=1);
 
 namespace Flagoon;
-
 class FolderCrawler
 {
     const SEPARATOR_TYPE = ' ';
     const SEPARATOR_VALUE = 20;
 
+    /**
+     * Ta funkcja drukowała wyniki w terminalu.
+     *
+     * @param array $array tablica zawiera listę plików i folderów z rozmiarami.
+     */
     public static function printResults(array $array)
     {
         foreach ($array as $name => $value) {
@@ -32,6 +36,12 @@ class FolderCrawler
         }
     }
 
+    /**
+     * Funkcja sprawia, że wszystkie wielkości plików/folderów są w tej wyrównane.
+     *
+     * @param string $word
+     * @return string - zwraca ilość tabów.
+     */
     private static function countNeededSeparators(string $word): string
     {
         $returnValue = '';
@@ -44,22 +54,32 @@ class FolderCrawler
         return $returnValue;
     }
 
+    /**
+     * Funkcja z przesłanej ścieżki tworzy tablicę z zawartością katalogu. Zwraca tablicę, gdzie kluczem jest nazwa pliku
+     * lub katalogu i jego rozmiar
+     *
+     * @param string $folder
+     * @return array
+     */
     public static function countSizes(string $folder): array
     {
         $folderContents = scandir($folder);
         $preparedArray = self::prepareArray($folderContents);
+        $size = 0;
 
         if (is_dir($folder)) {
             foreach ($preparedArray as $key => $value) {
                 if ($key === '.' || $key === '..') {
+                    $preparedArray[$key] = array(' - ', 'folder');
                     continue;
                 }
 
                 if (is_file($key)) {
-                    $preparedArray[$key] = filesize($key);
+                    $preparedArray[$key] = array(filesize($key), 'file');
                     continue;
                 } else {
-                    $preparedArray[$key] += self::countAll($folder . '/' . $key);
+                    $size += self::countAll($folder . '/' . $key);
+                    $preparedArray[$key] = array($size, 'folder');
                 }
             }
         }
@@ -67,6 +87,12 @@ class FolderCrawler
         return $preparedArray;
     }
 
+    /**
+     * Odwraca klucze z wartościami w tablicy.
+     *
+     * @param array $array
+     * @return array
+     */
     private static function prepareArray(array $array): array
     {
         $preparedArray = array_flip($array);
@@ -75,13 +101,20 @@ class FolderCrawler
         return $preparedArray;
     }
 
+    /**
+     * Zlicza rekurencyjnie wielkości w katalogach
+     *
+     * @param string $path
+     * @return int zwraca sumę wielkości w katalogu
+     */
     private static function countAll(string $path): int
     {
         $folderItems = scandir($path);
         $sum = 0;
 
-        unset($folderItems[0]);
-        unset($folderItems[1]);
+        // nie potrzebujemy "zliczać" '.' i '..'
+        unset($folderItems[0]); // '.'
+        unset($folderItems[1]); // '..'
 
         foreach ($folderItems as $item) {
             if (is_file($path . '/' . $item)) {

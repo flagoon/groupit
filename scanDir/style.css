@@ -1,0 +1,10 @@
+.link {
+  color: blue;
+  cursor: pointer;
+}
+
+td {
+  width: 10rem;
+  border: 1px solid black;
+  padding: 3px;
+}

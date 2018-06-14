@@ -1,0 +1,1 @@
+W sumie samo się wyjaśnia.
